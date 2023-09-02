@@ -1,0 +1,161 @@
+.orderBook {
+
+    .top {
+        padding: 42px 0;
+
+        .left-title {
+            color: #212833;
+            font-family: Inter;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 39.1px;
+
+            .small-title {
+                position: relative;
+                color: #48515D;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 23px;
+                /* 143.75% */
+            }
+
+            .small-title::before {
+                border-bottom: 1px solid black;
+
+            }
+        }
+
+        .right-item {
+            .top-title {
+
+                color: #848E9C;
+                font-size: 11px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 16px
+            }
+
+            select {
+                width: 120px;
+                min-height: 32px;
+                padding: 7px 13px 8.91px 13px;
+            }
+        }
+    }
+
+    .table {
+        text-align: center;
+
+        .grid-header {
+            .row .col {
+                font-weight: 600;
+            }
+        }
+
+        .grid-body {
+            .row {
+                position: relative;
+                margin: 0 auto;
+                width: 98%;
+                .col {
+                    b.Buy {
+                        color: rgb(0, 197, 130);
+                    }
+                    b.Sell {
+                        color: rgb(255, 3, 114);
+                    }
+                    font-weight: 500;
+                }
+
+            }
+            .row-highlight {
+                z-index: 999;
+                position: absolute;
+                height: 100%;
+                opacity: 0.2;
+            }
+          
+        }
+
+        .grid-header {
+            .row {
+                margin: 0 auto;
+                width: 98%;
+            }
+        }
+
+        .caption {
+            padding: 10px 35px !important;
+            background-color: #fff !important;
+            // padding: 15px 20px;
+            border: none;
+            color: #212833;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 21px;
+
+            .left_tag {
+                color: #212833;
+                font-family: Inter;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 21px;
+            }
+
+            .total-available {
+                font-size: 12px;
+                color: #919599;
+            }
+        }
+
+
+
+        .loading {
+            position: relative;
+
+            .bar {
+                margin: 0 auto;
+                background-color: #E7E7E7;
+                height: 20px;
+                border-radius: 7px;
+                width: 80%;
+            }
+
+            &:after {
+                position: absolute;
+                transform: translateY(-50%);
+                top: 50%;
+                left: 0;
+                content: "";
+                display: block;
+                width: 100%;
+                height: 24px;
+                background-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 80%);
+                background-size: 200px 24px;
+                background-position: -100px 0;
+                background-repeat: no-repeat;
+                animation: loading 1s infinite;
+            }
+        }
+
+
+    }
+
+
+}
+
+@keyframes loading {
+    40% {
+        background-position:
+            100% 0;
+    }
+
+    100% {
+        background-position:
+            100% 0;
+    }
+}
