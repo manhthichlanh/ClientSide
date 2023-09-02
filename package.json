@@ -11,13 +11,13 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.10.5",
+    "gh-pages": "^6.0.0",
     "lightweight-charts": "^4.0.1",
     "moment": "^2.29.4",
     "prop-types": "^15.8.1",
