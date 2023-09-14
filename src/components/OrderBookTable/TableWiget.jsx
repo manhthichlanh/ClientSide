@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-const renderPrice = (item, index, title, orderTotal, decimal) => {
+const renderPrice = (item, index, title, maxOrder, decimal) => {
     const price = item[0];
     const amout = item[1];
     const total = price * amout;
     // console.log({ width: total / orderTotal * 100000 })
-
+    // console.log({maxValue})
     return (
         // <tr key={index} className="">
         //   <td scope="row">{title} {index + 1}</td>
@@ -17,11 +17,11 @@ const renderPrice = (item, index, title, orderTotal, decimal) => {
         <div className="row" key={index}>
             {title == "Buy" ?
                 <>
-                    <div className={"row-highlight " + title} style={{ backgroundColor: "rgb(0, 197, 130)", width: (total / orderTotal * 1000) + "%", right: "0" }}></div>
+                    <div className={"row-highlight " + title} style={{ backgroundColor: "rgb(0, 197, 130)", width: (total / maxOrder * 1000) + "%", right: "0" }}></div>
                 </>
                 :
                 <>
-                    <div className={"row-highlight " + title} style={{ backgroundColor: "rgb(255, 3, 114)", width: (total / orderTotal * 1000) + "%", left: "0" }}></div>
+                    <div className={"row-highlight " + title} style={{ backgroundColor: "rgb(255, 3, 114)", width: (total / maxOrder * 1000) + "%", left: "0" }}></div>
                 </>
 
             }
@@ -35,7 +35,8 @@ const renderPrice = (item, index, title, orderTotal, decimal) => {
     )
 }
 export default function TableWiget(props) {
-    const { orderData, total, title, decimal, depth } = props;
+    const { orderData, total, maxOrder, title, decimal, depth } = props;
+    
     return (
         <div className={`grid-container table ${orderData.length > 0 ? "grid-hover" : ""}`}>
             <div className="grid-caption">
@@ -55,7 +56,7 @@ export default function TableWiget(props) {
             <div className="grid-body">
                 {orderData.length > 0 ? (
                     orderData.slice(0, depth).map((item, index) => {
-                        return renderPrice(item, index, title, total, decimal);
+                        return renderPrice(item, index, title, maxOrder, decimal);
                         // return (
                         //   <div className="row" key={index}>
                         //     <div className="col">Buy {index + 1}</div>
@@ -91,6 +92,7 @@ export default function TableWiget(props) {
 }
 TableWiget.propTypes = {
     orderData: PropTypes.array.isRequired,
+    maxOrder: PropTypes.number.isRequired,
     total: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     decimal: PropTypes.number.isRequired, // Xác định kiểu dữ liệu cho prop "decimal"

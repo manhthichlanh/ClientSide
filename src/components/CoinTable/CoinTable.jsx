@@ -1,24 +1,17 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import "./CoinTableStyle.scss"
-import { cexApi } from '../../utils/http';
-import { useQuery } from 'react-query';
 import { Link } from "react-router-dom";
-const useCoinPairData = () => {
-    return useQuery(
-        'coinPairData',
-        async () => {
-            const response = await cexApi.get("get_ticker");
-            return Object.entries(response.data.data);
-        }
-    );
-};
-export default function CoinTable() {
-    const { data, isLoading, error } = useCoinPairData();
-
-    useEffect(() => {
-        console.error(error)
-    }, [error]);
-
+// const useCoinPairData = () => {
+//     return useQuery(
+//         'coinPairData',
+//         async () => {
+//             const response = await cexApi.get("get_ticker");
+//             return Object.entries(response.data.data);
+//         }
+//     );
+// };
+export default function CoinTable(props) {
+    const { data, isLoading } = props;
 
     return (
         <div className="card tableContainer">
@@ -81,7 +74,9 @@ export default function CoinTable() {
                                             <td className="loading">
                                                 <div className="bar"></div>
                                             </td>
-
+                                            <td className="loading">
+                                                <div className="bar"></div>
+                                            </td>
                                         </tr>
 
 

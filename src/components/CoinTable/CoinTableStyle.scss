@@ -3,32 +3,25 @@
     border-radius: 0 !important;
     font-family: Inter;
     overflow: auto;
-    height: 90vh!important;
+    height: 90vh !important;
+    z-index: 3;
+
     table {
         white-space: nowrap;
         table-layout: fixed;
         width: 100%;
-        /* Make the table take up the full width of its container */
         border-collapse: collapse;
-        /* Collapse table borders */
 
         th,
         td {
             padding: 8px;
-            /* Add padding to table cells for spacing */
             white-space: nowrap;
-            /* Prevent text from wrapping */
             overflow: hidden;
-            /* Hide overflowed content */
             text-overflow: ellipsis;
 
-            /* Display ellipsis for overflowed content */
             &:not(:first-child) {
-                // max-width: 70px!important;
-                // overflow: hidden;
                 text-align: right;
-                // text-overflow:ellipsis;
-                /* Align content to the right for all columns except the first */
+
             }
         }
 
@@ -39,7 +32,6 @@
 
         th:first-child {
             text-align: left;
-            /* Align the first column's content to the left */
 
         }
 
@@ -49,21 +41,54 @@
             color: #2962FF;
             font-weight: 600 !important;
         }
+
         tbody {
             tr:hover {
                 cursor: pointer;
             }
         }
+
         thead {
-            background-color: #f2f2f2; /* Background color for the header */
-            position: sticky; /* Make the header sticky */
-            top: 0; /* Stick it to the top of the container */
-            z-index: 1; /* Ensure it appears above the table body when scrolling */
-            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+            background-color: #f2f2f2;
+            /* Background color for the header */
+            position: sticky;
+            /* Make the header sticky */
+            top: 0;
+            /* Stick it to the top of the container */
+            z-index: 1;
+            /* Ensure it appears above the table body when scrolling */
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+            /* Add a box shadow */
             height: 40px;
         }
 
-      
+        .loading {
+            position: relative;
+
+            .bar {
+                margin: 0 auto;
+                background-color: #E7E7E7;
+                height: 20px;
+                border-radius: 7px;
+                width: 80%;
+            }
+
+            &:after {
+                position: absolute;
+                transform: translateY(-50%);
+                top: 50%;
+                left: 0;
+                content: "";
+                display: block;
+                width: 100%;
+                height: 24px;
+                background-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 80%);
+                background-size: 200px 24px;
+                background-position: -100px 0;
+                background-repeat: no-repeat;
+                animation: loading 1s infinite;
+            }
+        }
 
         .sucessColor {
             color: #089981 !important;
@@ -72,5 +97,6 @@
         .warningColor {
             color: #F23645 !important;
         }
+
     }
 }

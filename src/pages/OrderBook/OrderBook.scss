@@ -1,3 +1,5 @@
+$primary: rgb(41, 98, 255);
+
 .orderBook {
 
     .top {
@@ -11,7 +13,7 @@
             font-weight: 500;
             line-height: 39.1px;
 
-            .small-title {
+            .sub-title {
                 position: relative;
                 color: #48515D;
                 font-size: 16px;
@@ -59,17 +61,21 @@
                 position: relative;
                 margin: 0 auto;
                 width: 98%;
+
                 .col {
                     b.Buy {
                         color: rgb(0, 197, 130);
                     }
+
                     b.Sell {
                         color: rgb(255, 3, 114);
                     }
+
                     font-weight: 500;
                 }
 
             }
+
             .row-highlight {
                 z-index: 1;
                 position: absolute;
@@ -77,7 +83,7 @@
                 opacity: 0.2;
                 padding: 1px;
             }
-        
+
         }
 
         .grid-header {
@@ -146,6 +152,21 @@
 
     }
 
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    .orderBook {
+        .main-title {
+            font-size: 22px;
+
+        }
+
+        .sub-title {
+            font-size: small;
+        }
+    }
 
 }
 
@@ -159,4 +180,5 @@
         background-position:
             100% 0;
     }
+
 }

@@ -299,7 +299,7 @@ export default function LightWeightChart(props) {
                 return momentA.isBefore(momentB) ? -1 : 1;
             }).map(item => {
                 const { timestamp, volume, open, high, low, close } = item;
-                volumes.push({ time: Math.floor(timestamp / 1000), value: Math.ceil(volume), color: open > close ? themeC.histogram.success : themeC.histogram.warning });
+                volumes.push({ time: Math.floor(timestamp / 1000), value: Math.ceil(volume), color: open < close ? themeC.histogram.success : themeC.histogram.warning });
                 lines.push({ time: Math.floor(timestamp / 1000), value: close })
                 candles.push({ time: Math.floor(timestamp / 1000), open, high, low, close })
             })
@@ -670,4 +670,5 @@ LightWeightChart.defaultProps = {
 };
 LightWeightChart.prototype = {
     themeColor: PropTypes.string.isRequired,
+    symbol: PropTypes.string.isRequired
 }

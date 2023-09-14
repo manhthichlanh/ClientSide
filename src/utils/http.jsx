@@ -6,8 +6,8 @@ const binanceApi = axios.create({
 const cexApi = axios.create({
   baseURL: 'https://api.plus.cex.io/rest-public',
 })
-const coinAPi = axios.create({
+const coinApi = axios.create({
   method: "GET",
   baseURL: 'https://crypto-view.onrender.com',
 })
-export { binanceApi, cexApi, coinAPi };
+export { binanceApi, cexApi, coinApi };

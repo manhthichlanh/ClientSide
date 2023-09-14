@@ -20,6 +20,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="quote/:pair/" element={<Home />} />
           <Route path="orderbook" element={<OrderBook />} />
+          <Route path="orderbook/:pair/" element={<OrderBook />} />
           <Route path="market" element={<Market />} />
           <Route path="*" element={<NoPage />} />
         </Route>
@@ -27,5 +28,4 @@ function App() {
     </BrowserRouter>
   )
 }
-
 export default App
