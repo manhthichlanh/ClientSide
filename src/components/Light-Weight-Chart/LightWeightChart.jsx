@@ -641,7 +641,7 @@ export default function LightWeightChart(props) {
                                 <div className="btn btn-light" onClick={() => handleClickToChangeRange("r")}>
                                     <i className="bi bi-chevron-right"></i>
                                 </div>
-                                <div className="btn btn-light" onClick={() => handleClickToChangeRange("b")} style={{ visibility: btnVisible ? "visible" : "hidden" }}>
+                                <div className="btn btn-light" onClick={() => handleClickToChangeRange("b")} style={{ display: btnVisible ? "block" : "none" }}>
                                     <i className="bi bi-arrow-counterclockwise"></i>
                                 </div>
 
